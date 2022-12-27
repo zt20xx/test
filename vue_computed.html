@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>computed</title>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{changeName}}</p>
+			<p>{{changeName}}</p>
+			<p>{{changeName2()}}</p>
+			<p>{{changeName2()}}</p>
+		</div>
+		<script src="js/vue.js"></script>
+		<script>
+			var count = 1;
+			var app = new Vue({
+				el: "#app",
+				data: {
+					uname: "张三"
+				},
+				// 基于依赖进行信息缓存
+				computed: {
+					changeName() {
+						count += 1;
+						return count + this.uname;
+					}
+				},
+				// js方法
+				methods: {
+					changeName2() {
+						count += 1;
+						return count + this.uname;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

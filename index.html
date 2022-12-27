@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>test</title>
-</head>
-<body>
-    中文乱码?
-啊啊啊啊
-</body>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>数据绑定</title>
+	</head>
+	<body>
+		<div id="box">
+			<p>{{uname}}</p>
+			<p v-if="Math.random()>0.5">随机数大于0.5</p>
+			<p v-else=>随机数不大于0.5</p>
+			<div v-if="type==='a'">A</div>
+			<div v-if="type==='b'">B</div>
+			<div v-if="type==='c'">C</div>
+			<div v-else>其它等级</div>
+			<h3 v-show="ok">还有一周过年</h3>
+		</div>
+
+	</body>
+	<script src="js/vue.js"></script>
+	<script>
+		var app = new Vue({
+			el: "#box",
+			data: {
+				uname: "张无忌",
+				type: "c",
+				ok: false
+			}
+		})
+	</script>
 </html>
-
-
-
-

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>vue中循环语句的使用</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 无序列表 无序:没有序号 -->
+      <ul>
+        <!-- 我们的for循环放在你要循环产生的那一项上 -->
+        <li v-for="s in student">
+          {{s.name}}
+        </li>
+      </ul>
+      <ul>
+        <!-- dog是对象,value就是里面的属性 -->
+        <li v-for="value in dog">
+          {{value}}
+        </li>
+      </ul>
+      <ul>
+        <!-- 默认从1 到 10进行循环 -->
+        <li v-for="x in 10">
+          {{x}}
+        </li>
+      </ul>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el:"#app",
+        data:{
+          /* []:数组,数组中存储多个元素 */
+          /* [{},{}...]:数组中的元素*/
+          /* 将所有人的信息显示在网页中,以列表的格式 */
+          student:[
+            {name:'赵明宇'},
+            {name:'吴思琪'},
+            {name:'刘鑫'}
+          ],
+          /* 这是一个dog对象 */
+          dog:{
+            /* 对象里面就会有属性 */
+            name:'旺财',
+            age:'2',
+            type:'中华田园犬',
+            price: 2000.0
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
